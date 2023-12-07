@@ -1,0 +1,45 @@
+@import '../../helpers/mixin';
+
+.sidebar {
+    background-color: var(--slack-color);
+    color: white;
+    max-width: 260px;
+    border: 1px solid #49274b;
+
+    .sidebar_header {
+        @include flex();
+        border-bottom: 1px solid #49274b;
+        padding-bottom: 10px;
+        padding: 13px;
+
+        & > .MuiSvgIcon-root {
+            padding: 8px;
+            background-color: white;
+            font-size: 18px;
+            color: #49274b;
+            border-radius: 999px;
+            box-sizing: content-box;
+        }
+
+        .sidebar_info {
+            flex:1;
+            h2 {
+                font-size: 15px;
+                font-weight: 900;
+                margin-bottom: 5px;
+            }
+            h3 {
+                @include flex($align:center);
+                font-size: 13px;
+                font-weight: 400;
+
+                & > .MuiSvgIcon-root {
+                    font-size: 14px;
+                    margin-top: 1px;
+                    margin-right: 2px;
+                    color: green;
+                }
+            }
+        }
+    }
+}
