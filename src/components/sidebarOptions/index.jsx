@@ -8,7 +8,7 @@ const SideBarOptions = ({Icon,title}) => {
         {Icon ? (
             <h3>{title}</h3>
         ) : (
-            <h3>
+            <h3 className='sidebarOptions_channel'>
               <span className='sidebarOption_hash'>#</span>{title}
             </h3>
         )}

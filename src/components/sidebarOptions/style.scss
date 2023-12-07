@@ -1,0 +1,23 @@
+@import '../../helpers/mixin';
+
+.sidebarOptions {
+    @include flex($align: center);
+    font-size: 12px;
+    padding-left: 2px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.9;
+        background-color: #340e36;
+    }
+
+    .sidebarOptions_icon {
+        padding: 10px;
+        font-size: 15px !important;
+        box-sizing: content-box;
+    }
+
+    .sidebarOptions_channel {
+        padding: 10px 0;
+    }
+}
