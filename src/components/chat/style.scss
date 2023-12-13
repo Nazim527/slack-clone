@@ -1,0 +1,33 @@
+@import "../../helpers/mixin";
+
+.chatBar {
+  flex: 0.7;
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding-bottom: 150px;
+}
+
+.chat_header {
+  @include flex(space-between, center);
+  padding: 20px;
+  border-bottom: 2px solid lightgray;
+
+  .chat_channelName {
+    text-transform: lowercase;
+    .MuiSvgIcon-root {
+        margin-left: 10px;
+        font-size: 18px;
+    }
+  }
+  .chat_headerRight {
+    & > p {
+      font-size: 14px;
+      @include flex($align: center);
+
+      .MuiSvgIcon-root {
+        margin-right: 5px;
+        font-size: 16px;
+      }
+    }
+  }
+}

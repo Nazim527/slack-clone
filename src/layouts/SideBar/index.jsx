@@ -17,7 +17,6 @@ import room from "../../server";
 import { onSnapshot } from "firebase/firestore";
 
 const SideBar = () => {
-  console.log(room);
   const [channels, setChannels] = React.useState([]);
 
   React.useEffect(() => {
