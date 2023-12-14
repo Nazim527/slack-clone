@@ -13,6 +13,7 @@
   border-bottom: 2px solid lightgray;
 
   .chat_channelName {
+    @include flex($align: center);
     text-transform: lowercase;
     .MuiSvgIcon-root {
         margin-left: 10px;

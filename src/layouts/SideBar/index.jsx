@@ -30,7 +30,6 @@ const SideBar = () => {
     });
 
     return () => {
-      // Cleanup the listener
       unsubscribe();
     };
   }, [room]);
@@ -59,7 +58,7 @@ const SideBar = () => {
       <hr />
       <SideBarOptions Icon={ExpandMoreIcon} title={"Channels"} />
       <hr />
-      <SideBarOptions Icon={AddIcon} title={"Add Channel"} />
+      <SideBarOptions Icon={AddIcon} title={"Add Channel"} addChannelOption={true}/>
 
       {/* //? Connect to DB and list all the channels */}
       {/*//* Sidebar Options...  */}
