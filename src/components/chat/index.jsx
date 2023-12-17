@@ -4,11 +4,12 @@ import { useParams } from "react-router-dom";
 import { InfoOutlined, StarBorderOutlined } from "@mui/icons-material";
 import { collection, doc, onSnapshot, orderBy, query } from "firebase/firestore";
 import room from "../../server";
+import Message from "../messages";
 
 const ChatBar = () => {
   const { roomId } = useParams();
   const [roomDetails, setRoomDetails] = React.useState(null);
-  const [roomMessage, setRoomMessage] = useState(null)
+  const [roomMessage, setRoomMessage] = useState([])
 
   React.useEffect(() => {
     const roomDoc = doc(room, roomId);
@@ -29,6 +30,8 @@ const ChatBar = () => {
 
   }, [roomId]);
 
+  console.log(roomMessage);
+
   return (
     <div className="chatBar">
       <div className="chat_header">
@@ -44,6 +47,16 @@ const ChatBar = () => {
             <InfoOutlined /> Details
           </p>
         </div>
+
+        </div>
+        <div className="chat_messages">
+          {roomMessage.map(({message,user,userImage,timestamp}) => (
+            <Message
+            user={user}
+            userImage={userImage}
+            timestamp={timestamp}
+            message={message}/>
+          ))}
       </div>
     </div>
   );

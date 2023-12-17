@@ -1,0 +1,22 @@
+@import "../../helpers/mixin";
+
+.message {
+  padding: 20px;
+  @include flex($align: center);
+
+  & > img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+  }
+
+  .message_info {
+    padding-left: 10px;
+
+    .message_timestamp {
+      color: gray;
+      font-weight: 300;
+      font-size: 13px;
+    }
+  }
+}
