@@ -28,7 +28,6 @@ const ChatBar = () => {
     })
 
   }, [roomId]);
-  console.log(roomMessage);
 
   return (
     <div className="chatBar">
