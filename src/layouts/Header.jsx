@@ -4,8 +4,11 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import SearchIcon from '@mui/icons-material/Search';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import '../layouts/header.scss'
+import { useStateValue } from '../store/stateProvider';
 
 const Header = () => {
+  const [{user}] = useStateValue()
+console.log(user);
   return (
     <div className='header'>
         <div className="header_left">
@@ -13,8 +16,8 @@ const Header = () => {
             {/* //? Time Icon */}
             <Avatar 
             className='header_avatar'
-            src=''
-            alt='Rzayev Nazim'/>
+            src={user?.photoURL}
+            alt=''/>
             <AccessTimeIcon/>
         </div>
         <div className="header_search">

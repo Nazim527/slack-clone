@@ -15,9 +15,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
 import room from "../../server";
 import { onSnapshot } from "firebase/firestore";
+import { useStateValue } from "../../store/stateProvider";
 
 const SideBar = () => {
   const [channels, setChannels] = React.useState([]);
+  const [{user}] = useStateValue()
 
   React.useEffect(() => {
     const unsubscribe = onSnapshot(room, (snapshot) => {
@@ -42,7 +44,7 @@ const SideBar = () => {
           <h2>Clever Programmer</h2>
           <h3>
             <FiberManualRecordIcon />
-            Rzayev Nazim
+            {user?.displayName}
           </h3>
         </div>
         <CreateIcon />
