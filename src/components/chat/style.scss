@@ -2,6 +2,7 @@
 
 .chatBar {
   flex: 0.7;
+  overflow-y: auto;
   flex-grow: 1;
   padding-bottom: 150px;
 }

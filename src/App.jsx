@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
-import Header from "./layouts/header";
 import SideBar from "./layouts/SideBar";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ChatBar from "./components/chat";
 import Login from "./layouts/login";
 import { useStateValue } from "./store/stateProvider";
+import Header from "./layouts/Header";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -14,7 +14,7 @@ function App() {
     <>
       {!user ? (
         <>
-          <Login/>
+          <Login />
         </>
       ) : (
         <>

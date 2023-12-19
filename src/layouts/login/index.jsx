@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.scss";
 import { Button } from "@mui/material";
 import { auth, provider } from "../../server";
@@ -10,17 +10,34 @@ const Login = () => {
     const [state, dispatch] = useStateValue()
 
     const signIn = (e) => {
-        signInWithPopup(auth,provider)
+      signInWithPopup(auth, provider)
         .then((result) => {
-            console.log(result);
-            dispatch({
-                type: actionTypes.SET_USER,
-                user: result.user
-            })
-        }).catch ((error) => {
-            alert(error.message);
+          console.log(result);
+  
+          localStorage.setItem("user", JSON.stringify(result.user));
+  
+          dispatch({
+            type: actionTypes.SET_USER,
+            user: result.user,
+          });
         })
-    }
+        .catch((error) => {
+          alert(error.message);
+        });
+    };
+
+    useEffect(() => {
+      const storedUser = localStorage.getItem("user");
+  
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+  
+        dispatch({
+          type: actionTypes.SET_USER,
+          user,
+        });
+      }
+    }, [dispatch]);
 
 
   return (

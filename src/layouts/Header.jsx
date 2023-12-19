@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar } from '@mui/material'
+import { Avatar, Button } from '@mui/material'
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import SearchIcon from '@mui/icons-material/Search';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
@@ -8,7 +8,13 @@ import { useStateValue } from '../store/stateProvider';
 
 const Header = () => {
   const [{user}] = useStateValue()
-console.log(user);
+
+
+  const logoutUser = () => {
+    localStorage.clear()
+    window.location.reload()
+  }
+
   return (
     <div className='header'>
         <div className="header_left">
@@ -29,6 +35,7 @@ console.log(user);
         <div className="header_right">
             {/* //? Help Icon */}
             <HelpOutlineIcon/>
+            <Button onClick={logoutUser}>Logout</Button>
         </div>
     </div>
   )

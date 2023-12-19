@@ -5,6 +5,7 @@ import { InfoOutlined, StarBorderOutlined } from "@mui/icons-material";
 import { collection, doc, onSnapshot, orderBy, query } from "firebase/firestore";
 import room from "../../server";
 import Message from "../messages";
+import ChatInput from "../chatInput";
 
 const ChatBar = () => {
   const { roomId } = useParams();
@@ -58,6 +59,7 @@ const ChatBar = () => {
             message={message}/>
           ))}
       </div>
+      <ChatInput channelName = {roomDetails?.name} channelId ={roomId} />  
     </div>
   );
 };
