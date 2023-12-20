@@ -1,35 +1,29 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
 import SideBar from "./layouts/SideBar";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, Outlet } from "react-router-dom";
 import ChatBar from "./components/chat";
 import Login from "./layouts/login";
 import { useStateValue } from "./store/stateProvider";
 import Header from "./layouts/Header";
+import Restricted from "./layouts/restricted";
+import Private from "./layouts/private";
+import HomePage from "./layouts/home";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
 
   return (
-    <>
-      {!user ? (
-        <>
-          <Login />
-        </>
-      ) : (
-        <>
-          <Header />
-          <div className="app_body">
-            <SideBar />
+    <Routes>
+      <Route element={<Restricted />}>
+        <Route path="/login" element={<Login />} />
+      </Route>
 
-            <Routes>
-              <Route path="/room/:roomId" element={<ChatBar />} />
-              <Route path="/" element={<h1>Welcome</h1>} />
-            </Routes>
-          </div>
-        </>
-      )}
-    </>
+      <Route element={<Private />}>
+        <Route path="/room/:roomId" element={<ChatBar />} />
+        <Route index element={<HomePage/>} />
+      </Route>
+    </Routes>
   );
 }
 
