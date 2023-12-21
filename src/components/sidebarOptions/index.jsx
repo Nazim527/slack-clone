@@ -10,6 +10,7 @@ const SideBarOptions = ({ Icon, title, id, addChannelOption }) => {
   async function addChannel() {
     const channelName = prompt("Please enter channel name")
 
+
     if(channelName){
       await addDoc(room, {
         name: channelName
@@ -18,6 +19,7 @@ const SideBarOptions = ({ Icon, title, id, addChannelOption }) => {
   }
 
   function selectedChannel() {
+    console.log(id);
     if(id){
       navigation(`/room/${id}`)
     } else {
