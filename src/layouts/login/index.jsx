@@ -12,7 +12,6 @@ const Login = () => {
     const signIn = (e) => {
       signInWithPopup(auth, provider)
         .then((result) => {
-          console.log(result);
   
           localStorage.setItem("user", JSON.stringify(result.user));
   

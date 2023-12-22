@@ -12,7 +12,7 @@ const ChatInput = ({ channelName, channelId }) => {
   const sendMessage = async (e) => {
     e.preventDefault();
 
-    if (channelId && user) {
+    if (channelId && user && input != "") {
       const roomDoc = doc(room, channelId);
       const messagesRef = collection(roomDoc, "messages");
 

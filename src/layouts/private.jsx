@@ -6,7 +6,6 @@ import SideBar from "./SideBar";
 
 const Private = () => {
   const [{ user }] = useStateValue();
-  console.log("Here is Private area");
   return (
     <>
       <Header />

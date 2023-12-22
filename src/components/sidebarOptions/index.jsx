@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import room from '../../server';
 import { addDoc } from 'firebase/firestore';
 
@@ -9,7 +9,6 @@ const SideBarOptions = ({ Icon, title, id, addChannelOption }) => {
 
   async function addChannel() {
     const channelName = prompt("Please enter channel name")
-
 
     if(channelName){
       await addDoc(room, {
@@ -23,7 +22,7 @@ const SideBarOptions = ({ Icon, title, id, addChannelOption }) => {
     if(id){
       navigation(`/room/${id}`)
     } else {
-      navigation(title)
+      navigation(`/room/YUmgkaAWvZUf4sp9mTDL`)
     }
   }
 

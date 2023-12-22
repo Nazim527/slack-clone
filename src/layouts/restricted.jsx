@@ -4,9 +4,7 @@ import { useStateValue } from "../store/stateProvider";
 
 const Restricted = () => {
   const [{ user }] = useStateValue();
-  console.log("Burada Kısıtlı Alan",user);
 
-  // Kullanıcı nesnesinin varlığını kontrol et
   return user ? <Navigate to="/" /> : 
   <>
     <Outlet />;

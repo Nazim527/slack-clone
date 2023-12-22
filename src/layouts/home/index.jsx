@@ -11,7 +11,6 @@ const HomePage = () => {
     const typeWriter = () => {
       if (index < fullText.length) {
         setText((prevText) => prevText + fullText.charAt(index));
-        console.log(fullText.charAt(index));
         setIndex((prevIndex) => prevIndex + 1);
       }
     };
