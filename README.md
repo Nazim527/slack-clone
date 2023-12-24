@@ -21,7 +21,7 @@ This project utilizes the following main dependencies for a smooth user experien
 - **react-spinners:** Customizable loading animations for visually appealing user experience.
 
 ## How to Contribute
-Contributions to enhance this Slack Clone are welcome! If you find any issues or have ideas for new features, please open an issue on GitHub. To contribute code, fork the repository and submit a pull request. Let's collaborate to make this Slack Clone even more impressive! 💻🌟
+### Contributions to enhance this Slack Clone are welcome! If you find any issues or have ideas for new features, please open an issue on GitHub. To contribute code, fork the repository and submit a pull request. Let's collaborate to make this Slack Clone even more impressive! 💻🌟
 ------
 ### Page 1
 ![Ekran görüntüsü 2023-12-24 222806](https://github.com/Nazim527/slack-clone/assets/68445690/234dacdb-07cb-4822-a548-64604c4e5a4d)
