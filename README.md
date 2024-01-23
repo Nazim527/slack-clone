@@ -2,7 +2,7 @@
 
 Welcome to the Slack Clone project. This React application focuses on enhancing your team's interaction and productivity by providing features such as authentication, channel management, and seamless communication among users. Elevate your team collaboration with this intuitive and feature-rich Slack Clone.
 
-Live Demo: https://slack-clone-fecc8.web.app/
+Live Demo: https://slack-clone1-acfab.web.app
 
 ## Key Features
 - **Authentication System:** Secure user login and account creation.
